@@ -1,0 +1,330 @@
+{
+  "intents": [
+    {
+      "name": "AMAZON.CancelIntent",
+      "samples": []
+    },
+    {
+      "name": "AMAZON.HelpIntent",
+      "samples": []
+    },
+    {
+      "name": "AMAZON.StopIntent",
+      "samples": []
+    },
+    {
+      "name": "GiftIdeaIntent",
+      "samples": [
+        "give me a gift idea",
+        "give me a gift idea for my {recipient} {name} for his {occasion}",
+        "give me a gift idea for my {recipient} for her {occasion}"
+      ],
+      "slots": [
+        {
+          "name": "recipient",
+          "type": "LIST_OF_RECIPIENTS",
+          "samples": [
+            "my {recipient} ",
+            "for my {recipient} ",
+            "it is for my {recipient} "
+          ]
+        },
+        {
+          "name": "name",
+          "type": "AMAZON.US_FIRST_NAME",
+          "samples": [
+            "her name is {name} ",
+            "his name is {name} ",
+            "it is {name}"
+          ]
+        },
+        {
+          "name": "occasion",
+          "type": "LIST_OF_OCCASIONS",
+          "samples": [
+            "it there {occasion} ",
+            "for an {occasion} ",
+            "for a {occasion} ",
+            "it is our {occasion} ",
+            "it is her {occasion} ",
+            "it is his {occasion} ",
+            "to say {occasion} ",
+            "to say happy {occasion} "
+          ]
+        },
+        {
+          "name": "color",
+          "type": "ECHO_DOT_COLORS",
+          "samples": [
+            "it is {color} ",
+            "his favorite color is {color} ",
+            "her favorite color is {color} "
+          ]
+        }
+      ]
+    }
+  ],
+  "types": [
+    {
+      "name": "ECHO_DOT_COLORS",
+      "values": [
+        {
+          "id": null,
+          "name": {
+            "value": "black",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "white",
+            "synonyms": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "LIST_OF_OCCASIONS",
+      "values": [
+        {
+          "id": null,
+          "name": {
+            "value": "anniversary",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "birthday",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "wedding",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "graduation",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "get well soon",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "thank you",
+            "synonyms": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "LIST_OF_RECIPIENTS",
+      "values": [
+        {
+          "id": null,
+          "name": {
+            "value": "brother",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "sister",
+            "synonyms": [
+              "sis"
+            ]
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "mother",
+            "synonyms": [
+              "mom",
+              "mommy"
+            ]
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "father",
+            "synonyms": [
+              "dad",
+              "daddy"
+            ]
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "wife",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "son",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "daughter",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "grandparent",
+            "synonyms": [
+              "grandma",
+              "grandpa"
+            ]
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "boss",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "friend",
+            "synonyms": [
+              "best friend",
+              "B.F.F."
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "prompts": [
+    {
+      "id": "Elicit.Intent-GiftIdeaIntent.IntentSlot-recipient",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "who is the gift for?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-GiftIdeaIntent.IntentSlot-name",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "what is your {recipient}'s name?"
+        }
+      ]
+    },
+    {
+      "id": "Confirm.Intent-GiftIdeaIntent.IntentSlot-name",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "you said your {recipient}'s name is {name}, right?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-GiftIdeaIntent.IntentSlot-occasion",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "what is the occasion?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-GiftIdeaIntent.IntentSlot-color",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "What is your {recipient}'s favorite color?"
+        }
+      ]
+    }
+  ],
+  "dialog": {
+    "version": "1.0",
+    "intents": [
+      {
+        "name": "GiftIdeaIntent",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": [
+          {
+            "name": "recipient",
+            "type": "LIST_OF_RECIPIENTS",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicit": "Elicit.Intent-GiftIdeaIntent.IntentSlot-recipient"
+            }
+          },
+          {
+            "name": "name",
+            "type": "AMAZON.US_FIRST_NAME",
+            "elicitationRequired": true,
+            "confirmationRequired": true,
+            "prompts": {
+              "elicit": "Elicit.Intent-GiftIdeaIntent.IntentSlot-name",
+              "confirm": "Confirm.Intent-GiftIdeaIntent.IntentSlot-name"
+            }
+          },
+          {
+            "name": "occasion",
+            "type": "LIST_OF_OCCASIONS",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicit": "Elicit.Intent-GiftIdeaIntent.IntentSlot-occasion"
+            }
+          },
+          {
+            "name": "color",
+            "type": "ECHO_DOT_COLORS",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicit": "Elicit.Intent-GiftIdeaIntent.IntentSlot-color"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
